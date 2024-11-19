@@ -7,18 +7,13 @@ public class Pulse : MonoBehaviour
     [SerializeField]
     [Tooltip(" minimum scale for the sun(Circle) when do pulse")]
     float Min_Scale = 0.5f;
-    
     [SerializeField]
     [Tooltip("max scale for the sun(Circle) when do pulse")]
     float max_Scale = 2f;
-
     [SerializeField]
     [Tooltip("speed for the pulse")]
     float puls_Speed = 1f;
-
-
     private Vector3 ScaleOfsun;
-
     // Start is called before the first frame update
     void Start()
     {
