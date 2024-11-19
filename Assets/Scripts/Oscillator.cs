@@ -6,15 +6,12 @@ public class Oscillator : MonoBehaviour
 {
     [Tooltip("Direction of oscillation, e.g., Vector3.right for horizontal.")]
     public Vector3 oscillationDirection = Vector3.right;
-
     [SerializeField]
     [Tooltip("the Start Location for Airplane")]
     private Vector3 StartPosition;
-
     [SerializeField]
     [Tooltip("Max distance for airplane to move right or left")]
     private float Maxdistance=1;
-
     [SerializeField]
     [Tooltip("speed for airplane to move right or left")]
     private float speed = 1f;
