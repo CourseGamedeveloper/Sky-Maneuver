@@ -30,7 +30,7 @@ public class Pulse : MonoBehaviour
     {
         // Calculate the scale factor using Mathf.Lerp and Mathf.Sin
         float scale = Mathf.Lerp(Min_Scale, Max_Scale, Mathf.Sin(Time.time * Pulse_Speed));
-        
+
         // Apply the calculated scale to the object
         transform.localScale = OriginalScale * scale;
     }
