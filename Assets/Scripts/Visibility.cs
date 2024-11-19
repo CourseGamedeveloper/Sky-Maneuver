@@ -7,9 +7,7 @@ public class Visibility : MonoBehaviour
     [SerializeField]
     [Tooltip("The button for orange-airplane to disappear")]
     public InputAction toggleAction=new InputAction(type:InputActionType.Button);
-  
     private Renderer objectRenderer;
-
     void OnEnable()
     {
         toggleAction.Enable();
