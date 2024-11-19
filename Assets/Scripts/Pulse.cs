@@ -5,29 +5,33 @@ using UnityEngine;
 public class Pulse : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip(" minimum scale for the sun(Circle) when do pulse")]
-    float Min_Scale = 0.5f;
+    [Tooltip("Minimum scale for the sun (Circle) when pulsing.")]
+    private float Min_Scale = 0.5f;
+
     [SerializeField]
-    [Tooltip("max scale for the sun(Circle) when do pulse")]
-    float max_Scale = 2f;
+    [Tooltip("Maximum scale for the sun (Circle) when pulsing.")]
+    private float Max_Scale = 2f;
+
     [SerializeField]
-    [Tooltip("speed for the pulse")]
-    float puls_Speed = 1f;
-    private Vector3 ScaleOfsun;
+    [Tooltip("Speed of the pulse.")]
+    private float Pulse_Speed = 1f;
+
+    private Vector3 OriginalScale;
+
     // Start is called before the first frame update
     void Start()
     {
-        //save the orginal scale sun
-        ScaleOfsun = transform.localScale;
-        
+        // Save the original scale of the sun
+        OriginalScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-       float scale=Mathf.Lerp(Min_Scale,max_Scale,Mathf.Sin(Time.time*puls_Speed));  
-       transform.localScale = ScaleOfsun*scale;
+        // Calculate the scale factor using Mathf.Lerp and Mathf.Sin
+        float scale = Mathf.Lerp(Min_Scale, Max_Scale, Mathf.Sin(Time.time * Pulse_Speed));
         
+        // Apply the calculated scale to the object
+        transform.localScale = OriginalScale * scale;
     }
 }
